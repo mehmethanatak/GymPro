@@ -15,6 +15,7 @@ namespace GymPro
         public Login()
         {
             InitializeComponent();
+            Singleton.InitilizeVars();
         }
 
         private void button1_Click(object sender, EventArgs e)

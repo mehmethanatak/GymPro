@@ -20,48 +20,31 @@ namespace GymPro
 
         private void DeleteEqu_Load(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = "data source=LAPTOP-LTT8NJF2;  database = GYM; integrated security = True ";
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
+            var cmd = Singleton.cmd;
 
             cmd.CommandText = "select * from Equipment";
-            SqlDataAdapter DA = new SqlDataAdapter(cmd);
-            DataSet DS = new DataSet();
-            DA.Fill(DS);
+            Singleton.Command(cmd);
 
-            dataGridView1.DataSource = DS.Tables[0];
+            dataGridView1.DataSource = Singleton.DS.Tables[0];
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("This will delete your equipment. Are you sure?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = "data source=LAPTOP-LTT8NJF2;  database = GYM; integrated security = True ";
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
+                var cmd = Singleton.cmd;
 
                 cmd.CommandText = "delete from Equipment where E_ID = " + txtSearch.Text + "";
-                SqlDataAdapter DA = new SqlDataAdapter(cmd);
-                DataSet DS = new DataSet();
-                DA.Fill(DS);
-
-
+                Singleton.Command(cmd);
             }
             else
             {
                 this.Activate();
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = "data source=LAPTOP-LTT8NJF2;  database = GYM; integrated security = True ";
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
+                var cmd = Singleton.cmd;
 
                 cmd.CommandText = "select * from Equipment";
-                SqlDataAdapter DA = new SqlDataAdapter(cmd);
-                DataSet DS = new DataSet();
-                DA.Fill(DS);
-                dataGridView1.DataSource = DS.Tables[0];
+                Singleton.Command(cmd);
+                dataGridView1.DataSource = Singleton.DS.Tables[0];
 
 
             }

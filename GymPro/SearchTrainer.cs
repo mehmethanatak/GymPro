@@ -13,6 +13,8 @@ namespace GymPro
 {
     public partial class SearchTrainer : Form
     {
+        private readonly SqlCommand cmd = Singleton.cmd;
+
         public SearchTrainer()
         {
             InitializeComponent();
@@ -30,29 +32,17 @@ namespace GymPro
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            if (txtSearch.Text != "")
             {
-                if (txtSearch.Text != "")
-                {
+                cmd.CommandText = "select * from NewTrainer where MID = " + txtSearch.Text + "";
+                Singleton.Command(cmd);
 
-                    SqlConnection con = new SqlConnection();
-                    con.ConnectionString = "data source=LAPTOP-LTT8NJF2;  database = GYM; integrated security = True ";
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = con;
-
-                    cmd.CommandText = "select * from NewTrainer where MID = " + txtSearch.Text + "";
-                    SqlDataAdapter DA = new SqlDataAdapter(cmd);
-                    DataSet DS = new DataSet();
-                    DA.Fill(DS);
-
-                    dataGridView1.DataSource = DS.Tables[0];
-
-                }
-                else
-                {
-                    MessageBox.Show("Please enter a ID", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                dataGridView1.DataSource = Singleton.DS.Tables[0];
             }
-
+            else
+            {
+                MessageBox.Show("Please enter a ID", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -62,22 +52,10 @@ namespace GymPro
 
         private void SearchTrainer_Load(object sender, EventArgs e)
         {
-            {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = "data source=LAPTOP-LTT8NJF2;  database = GYM; integrated security = True ";
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
+            cmd.CommandText = "select * from NewTrainer";
+            Singleton.Command(cmd);
 
-                cmd.CommandText = "select * from NewTrainer";
-                SqlDataAdapter DA = new SqlDataAdapter(cmd);
-                DataSet DS = new DataSet();
-                DA.Fill(DS);
-
-                dataGridView1.DataSource = DS.Tables[0];
-
-
-            }
-
+            dataGridView1.DataSource = Singleton.DS.Tables[0];
         }
     }
 }

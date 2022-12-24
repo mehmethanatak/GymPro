@@ -13,6 +13,8 @@ namespace GymPro
 {
     public partial class NewTrainer : Form
     {
+        private readonly SqlCommand cmd = Singleton.cmd;
+
         public NewTrainer()
         {
             InitializeComponent();
@@ -39,15 +41,8 @@ namespace GymPro
             String register = dateTimePickerRegisterDate.Text;
             String address = txtAddress.Text;
 
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = "data source=LAPTOP-LTT8NJF2;  database = GYM; integrated security = True ";
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-
             cmd.CommandText = "insert into NewTrainer(First_Name,Last_Name,Gender,Birthday,Phone_Number,Email,R_Date,M_Address) values (' " + fname + " ' , ' " + lname + " ',' " + gender + " ' ,' " + dob + " ' ,' " + mobile + " ' ,' " + email + " ' ,' " + register + " ' ,' " + address + " ')";
-            SqlDataAdapter DA = new SqlDataAdapter(cmd);
-            DataSet DS = new DataSet();
-            DA.Fill(DS);
+            Singleton.Command(cmd);
             MessageBox.Show("Registration confirmed.");
         }
 
