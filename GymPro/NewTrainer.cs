@@ -38,13 +38,15 @@ namespace GymPro
             String email = txtEmail.Text;
             String register = dateTimePickerRegisterDate.Text;
             String address = txtAddress.Text;
+            String MID = txtMID.Text;
+            
 
             SqlConnection con = new SqlConnection();
             con.ConnectionString = "data source=LAPTOP-LTT8NJF2;  database = GYM; integrated security = True ";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
 
-            cmd.CommandText = "insert into NewTrainer(First_Name,Last_Name,Gender,Birthday,Phone_Number,Email,R_Date,M_Address) values (' " + fname + " ' , ' " + lname + " ',' " + gender + " ' ,' " + dob + " ' ,' " + mobile + " ' ,' " + email + " ' ,' " + register + " ' ,' " + address + " ')";
+            cmd.CommandText = "insert into NewTrainer(First_Name,Last_Name,Gender,Birthday,Phone_Number,Email,R_Date,M_Address,MID) values (' " + fname + " ' , ' " + lname + " ',' " + gender + " ' ,' " + dob + " ' ,' " + mobile + " ' ,' " + email + " ' ,' " + register + " ' ,' " + address + " ','"+MID+"')";
             SqlDataAdapter DA = new SqlDataAdapter(cmd);
             DataSet DS = new DataSet();
             DA.Fill(DS);
@@ -60,6 +62,7 @@ namespace GymPro
             txtMobile.Clear();
             txtEmail.Clear();
             txtAddress.Clear();
+            txtMID.Clear();
             dateTimePickerDOB.Value = DateTime.Now;
             dateTimePickerRegisterDate.Value = DateTime.Now;
 

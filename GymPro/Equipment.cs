@@ -31,12 +31,13 @@ namespace GymPro
             String MUsed = txtMuscle.Text;
             String DDate = dateTimePickerDel.Text;  
             Int64 cost = Int64.Parse(txtCost.Text);
+            String MID = txtMID.Text;
             
             SqlConnection con = new SqlConnection();
             con.ConnectionString = "data source=LAPTOP-LTT8NJF2;  database = GYM; integrated security = True ";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "insert into Equipment(Equip_Name,E_Desc,Muscle_Used,Deliver_Date,Cost) values ('" + EquipName + "' , '" + Description + "','" + MUsed + "','" + DDate + "','" + cost + "')";
+            cmd.CommandText = "insert into Equipment(Equip_Name,E_Desc,Muscle_Used,Deliver_Date,Cost,MID) values ('" + EquipName + "' , '" + Description + "','" + MUsed + "','" + DDate + "','" + cost + "','"+MID+"')";
 
             SqlDataAdapter DA = new SqlDataAdapter(cmd);
             DataSet DS = new DataSet();
@@ -51,6 +52,7 @@ namespace GymPro
             txtMuscle.Clear();
             dateTimePickerDel.Value = DateTime.Now;
             txtCost.Clear();
+            txtMID.Clear();
 
         }
 
@@ -77,6 +79,11 @@ namespace GymPro
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Equipment_Load(object sender, EventArgs e)
         {
 
         }

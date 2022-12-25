@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WfSg5v9bX6g6ROloKDKhkqTAhXIZgiAVk1XbGV7/4O5DcJIxFIdPRPIB3j779EXqV/roKjOiC745DnP/laBIjQ==",
+  "dgSpecHash": "UV/yuudh0BTKTwMGXTNQxl3lHBtQdHy08dRMAangGMMGVJsqQp/hvzxdle7LxyKc/j1673cX3JUEtfvpliQXbQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mehme\\OneDrive\\Masaüstü\\GymPro\\GymPro\\GymPro\\GymPro.csproj",
+  "projectFilePath": "C:\\Users\\mehme\\OneDrive\\Masaüstü\\school\\GymPro\\GymPro\\GymPro\\GymPro.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mehme\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\mehme\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.0.0\\microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",

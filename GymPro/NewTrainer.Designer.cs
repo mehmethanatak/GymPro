@@ -50,6 +50,8 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtMID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -286,12 +288,35 @@
             this.label8.Text = "X";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.Image = global::GymPro.Properties.Resources.driver_license__2_;
+            this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label9.Location = new System.Drawing.Point(456, 301);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(161, 29);
+            this.label9.TabIndex = 48;
+            this.label9.Text = "Member ID:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtMID
+            // 
+            this.txtMID.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtMID.Location = new System.Drawing.Point(688, 301);
+            this.txtMID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMID.Name = "txtMID";
+            this.txtMID.Size = new System.Drawing.Size(138, 32);
+            this.txtMID.TabIndex = 47;
+            // 
             // NewTrainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(918, 533);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtMID);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonSave);
@@ -347,5 +372,7 @@
         private TextBox txtEmail;
         private TextBox txtFirstName;
         private Label label8;
+        private Label label9;
+        private TextBox txtMID;
     }
 }

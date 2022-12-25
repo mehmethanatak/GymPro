@@ -45,6 +45,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtMID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +96,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(233, 386);
+            this.label5.Location = new System.Drawing.Point(84, 389);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 26);
             this.label5.TabIndex = 4;
@@ -132,7 +134,7 @@
             // 
             // txtCost
             // 
-            this.txtCost.Location = new System.Drawing.Point(308, 385);
+            this.txtCost.Location = new System.Drawing.Point(159, 388);
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(266, 27);
             this.txtCost.TabIndex = 9;
@@ -199,12 +201,34 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label9.Location = new System.Drawing.Point(511, 389);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(161, 29);
+            this.label9.TabIndex = 50;
+            this.label9.Text = "Member ID:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtMID
+            // 
+            this.txtMID.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtMID.Location = new System.Drawing.Point(712, 389);
+            this.txtMID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMID.Name = "txtMID";
+            this.txtMID.Size = new System.Drawing.Size(163, 32);
+            this.txtMID.TabIndex = 49;
+            // 
             // Equipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(918, 533);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtMID);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
@@ -225,6 +249,7 @@
             this.Name = "Equipment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Equipment";
+            this.Load += new System.EventHandler(this.Equipment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -249,5 +274,7 @@
         private Label label6;
         private Button button1;
         private PictureBox pictureBox1;
+        private Label label9;
+        private TextBox txtMID;
     }
 }

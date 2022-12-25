@@ -47,7 +47,7 @@ namespace GymPro
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
 
-                cmd.CommandText = "delete from NewTrainer where MID = " + txtSearch.Text + "";
+                cmd.CommandText = "delete from NewTrainer where TID = " + txtSearch.Text + "";
                 SqlDataAdapter DA = new SqlDataAdapter(cmd);
                 DataSet DS = new DataSet();
                 DA.Fill(DS);
@@ -70,6 +70,11 @@ namespace GymPro
 
 
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
