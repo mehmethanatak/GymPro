@@ -63,19 +63,10 @@ namespace GymPro
             String address = txtAddress.Text;
             String membership = comboBoxMembership.Text;
 
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = "data source=LAPTOP-LTT8NJF2;  database = GYM; integrated security = True ";
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-
-            cmd.CommandText= "insert into NewMember(First_Name,Last_Name,Gender,Height_cm,Weight_kg,Birthday,Phone_Number,Email,R_Date,M_Address,M_Time) values ('" + fname + "' , '" + lname + "','" + gender + "','"+height+"','"+weight+"', '" + dob+ "' ,'"+mobile+"',' " +email+ " ',' " + register+ " ',' " + address+ " ',' " + membership+ "')";
-            
-            SqlDataAdapter DA = new SqlDataAdapter(cmd);
-            DataSet DS = new DataSet();
-            DA.Fill(DS);
+            var cmd = Singleton.cmd;
+            cmd.CommandText = "insert into NewMember(First_Name,Last_Name,Gender,Height_cm,Weight_kg,Birthday,Phone_Number,Email,R_Date,M_Address,M_Time) values ('" + fname + "' , '" + lname + "','" + gender + "','"+height+"','"+weight+"', '" + dob+ "' ,'"+mobile+"',' " +email+ " ',' " + register+ " ',' " + address+ " ',' " + membership+ "')";
+            Singleton.Command(cmd);
             MessageBox.Show("Registration confirmed.");
-
-
 
         }
 

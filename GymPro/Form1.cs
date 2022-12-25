@@ -38,8 +38,7 @@ namespace GymPro
             {
                 Application.Exit();
             }
-            
-            }
+        }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {

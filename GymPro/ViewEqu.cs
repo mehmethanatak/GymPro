@@ -13,6 +13,8 @@ namespace GymPro
 {
     public partial class ViewEqu : Form
     {
+        private readonly SqlCommand cmd = Singleton.cmd;
+
         public ViewEqu()
         {
             InitializeComponent();
@@ -20,16 +22,10 @@ namespace GymPro
 
         private void ViewEqu_Load(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = "data source=LAPTOP-LTT8NJF2;  database = GYM; integrated security = True ";
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
             cmd.CommandText = "SELECT * FROM Equipment";
-            SqlDataAdapter DA = new SqlDataAdapter(cmd);
-            DataSet DS = new DataSet();
-            DA.Fill(DS);
+            Singleton.Command(cmd);
 
-            dataGridView1.DataSource = DS.Tables[0];
+            dataGridView1.DataSource = Singleton.DS.Tables[0];
         }
 
         private void label2_Click(object sender, EventArgs e)
